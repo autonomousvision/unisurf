@@ -24,7 +24,7 @@ rendering:
   sig_factor: 10.0
 dataloading:
   dataset_name: DTU
-  path: /is/rg/avg/moechsle/project_data/2020/onerf/data/DTU/
+  path: data/DTU/
   classes: ['scan40']
   cache_fields: True
   n_views: 49

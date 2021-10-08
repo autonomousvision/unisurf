@@ -24,7 +24,7 @@ rendering:
   sig_factor: 10.0
 dataloading:
   dataset_name: DTU
-  path: /is/rg/avg/moechsle/project_data/2020/onerf/data/DTU/
+  path: data/DTU/
   classes: ['scan24']
   cache_fields: True
   n_views: 49
@@ -34,7 +34,7 @@ dataloading:
   ignore_image_idx: []
 training:
   type: unisurf
-  out_dir:  ./out/DTU/scan0024/
+  out_dir:  out/DTU/scan0024/
   n_training_points: 1024
   batch_size: 1
   learning_rate: 0.0001
