@@ -1,0 +1,9 @@
+model:
+  num_layers: 8
+extraction:
+  extraction_dir: extraction
+  mesh_extension: ply
+  model_file: model_400000.pt
+  refinement_step: 0
+  upsampling_steps: 3
+  resolution: 64

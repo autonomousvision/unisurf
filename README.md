@@ -11,3 +11,20 @@ If you find our code or paper useful, please cite as
       booktitle = {International Conference on Computer Vision (ICCV)},
       year = {2021}
     } 
+    
+    
+## Installation
+
+First you have to make sure that you have all dependencies in place.
+The simplest way to do so, is to use [anaconda](https://www.anaconda.com/).
+
+You can create an anaconda environment called `unisurf` using
+```
+conda env create -f environment.yaml
+conda activate unisurf
+```
+Next, compile the extension modules.
+You can do this via
+```
+python setup.py build_ext --inplace
+```

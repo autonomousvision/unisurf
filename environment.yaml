@@ -1,0 +1,34 @@
+name: unisurf
+channels:
+  - pytorch
+  - conda-forge
+  - anaconda
+  - defaults
+dependencies:
+  - python
+  - pytorch 
+  - torchvision 
+  - torchaudio 
+  - cudatoolkit=10.2
+  - cffi
+  - cython
+  - imageio
+  - numpy
+  - scipy
+  - matplotlib
+  - pandas
+  - tensorboard
+  - yaml
+  - pillow
+  - wheel
+  - pip
+  - tqdm
+  - pip:
+    - ipdb
+    - ipython
+    - ipython-genutils
+    - jedi
+    - opencv-python
+    - scikit-image
+    - pyyaml
+    - trimesh
