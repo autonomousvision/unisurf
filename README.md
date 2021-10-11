@@ -29,4 +29,50 @@ You can do this via
 python setup.py build_ext --inplace
 ```
 
-## TODOs
+## Dataset
+For downloading the preprocessed data, run the following script. 
+```
+source ./scripts/download_data.sh
+```
+We just provide data for the car category with a file size of 33 GB.
+The dataset is copied to the `data/` folder. For each 3D object we have 17 input views, 10 random views with corresponding depth maps and camera information. The train, test and validation splits are located in the main sub folder of the categories. For visualization, we provide renderings from fixed views in th `visualize` subfolder.
+Data structure:
+____
+data/shapenet/data_cars/{ModelID}/\
+&nbsp;&nbsp;&nbsp;&nbsp; input_image/ \
+&nbsp;&nbsp;&nbsp;&nbsp; image/\
+&nbsp;&nbsp;&nbsp;&nbsp; depth/\
+&nbsp;&nbsp;&nbsp;&nbsp; visualize/\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; image/\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; depth/\
+&nbsp;&nbsp;&nbsp;&nbsp; pointcloud.npz
+____
+
+
+## Extract mesh from a pretrained model
+
+If you just want to quickly test extract a mesh from a pre-trained model, you can run our demo with 
+```
+python extract.py configs/DTU/scan_0$id.yaml 
+```
+
+You can find predicted meshes in `out/scan_0$id/`.
+
+
+## Training
+For training a model from scratch run 
+```
+python train.py CONFIG.yaml
+```
+in the conda environement.
+Please set the following option in the config file:
+```
+model:
+  model_file: model_400000.pt
+```
+So that pre-trained model are not loaded.
+The training process can be visualized with tensorboard. The logfiles are saved to the `logs` folder in the output directory.
+```
+tensorboard --logdir ./out --port 6006
+```
+
