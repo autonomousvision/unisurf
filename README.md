@@ -32,7 +32,7 @@ python setup.py build_ext --inplace
 ## Dataset
 For downloading the preprocessed data, run the following script. 
 ```
-source ./scripts/download_data.sh
+source ./download_data.sh
 ```
 
 ## Extract mesh from a pretrained model
