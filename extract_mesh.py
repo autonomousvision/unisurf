@@ -55,10 +55,11 @@ generator = Extractor3D(
 test_loader = get_dataloader(cfg, mode='test')
 iter_test = iter(test_loader)
 data_test = next(iter_test)
-test_mask_loader = get_dataloader(
-    cfg, mode='test', shuffle=False, 
-    spilt_model_for_images=True, with_mask=True
-)
+test_mask_loader = None 
+# get_dataloader(
+#     cfg, mode='test', shuffle=False, 
+#     spilt_model_for_images=True, with_mask=True
+# )
 
 # Generate
 model.eval()

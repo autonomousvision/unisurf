@@ -1,0 +1,54 @@
+
+model:
+  num_layers: 8
+  hidden_dim: 256
+  octaves_pe: 6
+  octaves_pe_views: 4
+  skips: [4]
+  geometric_init: True
+  feat_size: 256
+  rescale: 1.0
+  sig_factor: 10.0
+rendering:
+  type: unisurf
+  n_max_network_queries: 64000
+  white_background: False
+  radius: 4.0
+  interval_start: 2.0 
+  interval_end: 0.1
+  interval_decay: 0.000015
+  num_points_in: 64
+  num_points_out: 32
+  ray_marching_steps: 256
+  occ_prob_points: 64
+  sig_factor: 10.0
+dataloading:
+  dataset_name: DTU
+  path: data/DTU/
+  classes: ['scan63']
+  cache_fields: True
+  n_views: 49
+  batchsize: 1
+  n_workers: 8
+  img_size:
+  ignore_image_idx: []
+training:
+  type: unisurf
+  out_dir:  ./out/DTU/scan0063/
+  n_training_points: 1024
+  batch_size: 1
+  learning_rate: 0.0001
+  weight_decay: 0.0
+  scheduler_milestones: [4000, 8000]
+  scheduler_gamma: 0.5
+  visualize_every: 10000
+  print_every: 100
+  backup_every: 10000
+  checkpoint_every: 5000
+  visualize_skip: 20
+  lambda_l1_rgb: 1.0
+  lambda_normals: 0.005
+  lambda_occ_prob: 0.0
+  vis_resolution: [300, 400]
+extraction:
+  model_file: https://s3.eu-central-1.amazonaws.com/avg-projects/unisurf/models/scan0063/0063_400000.pt
