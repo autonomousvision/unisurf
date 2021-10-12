@@ -38,16 +38,16 @@ python setup.py build_ext --inplace
 ```
 
 ## Dataset
-For downloading the preprocessed data, run the following script. 
+For downloading the preprocessed data, run the following script. The data is adapted from [DVR](https://github.com/autonomousvision/differentiable_volumetric_rendering) and [IDR](https://github.com/lioryariv/idr)
 ```
-source ./download_data.sh
+source ./download_dataset.sh
 ```
 
 ## Extract mesh from a pretrained model
 
-If you just want to quickly test extract a mesh from a pre-trained model, you can run our demo with 
+If you just want to quickly extract a mesh from a pre-trained model, you can run our demo with 
 ```
-python extract.py configs/DTU/scan_0$id.yaml 
+python extract.py configs/DTU_pre/scan_0$id.yaml 
 ```
 
 You can find predicted meshes in `out/scan_0$id/`.
@@ -56,16 +56,10 @@ You can find predicted meshes in `out/scan_0$id/`.
 ## Training
 For training a model from scratch run 
 ```
-python train.py CONFIG.yaml
+python train.py configs/DTU/scan_0$id.yaml
 ```
-in the conda environement.
-Please set the following option in the config file:
-```
-model:
-  model_file: model_400000.pt
-```
-So that pre-trained model are not loaded.
-The training process can be visualized with tensorboard. The logfiles are saved to the `logs` folder in the output directory.
+in the conda environment.
+You can use tensor board to visualize the training process. The logfiles are saved to the `logs` folder in the output directory.
 ```
 tensorboard --logdir ./out --port 6006
 ```
