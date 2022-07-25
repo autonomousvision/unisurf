@@ -30,6 +30,7 @@ mise_module = Extension(
     sources=[
         'utils/libmise/mise.pyx'
     ],
+    include_dirs=[numpy_include_dir]
 )
 
 
