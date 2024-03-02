@@ -47,7 +47,7 @@ source ./download_dataset.sh
 
 If you just want to quickly extract a mesh from a pre-trained model, you can run our demo with 
 ```
-python extract.py configs/DTU_pre/scan_0$id.yaml 
+python extract_mesh.py configs/DTU_pre/scan0$id.yaml 
 ```
 
 You can find predicted meshes in `out/scan_0$id/`.
